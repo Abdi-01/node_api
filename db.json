@@ -3,16 +3,23 @@
         {
             "id": 2,
             "username": "Abdi",
-            "password": "1234",
-            "email": "abdi@mail.com",
-            "role": "user"
+            "password": "123456",
+            "email": "abdi@yahoo.com",
+            "role": "user",
+            "cart": []
         },
         {
             "id": 3,
-            "username": "Edo",
-            "password": "1234",
-            "email": "edo@mail.com",
-            "role": "user"
+            "password": "123456",
+            "email": "edi@mail.com"
+        },
+        {
+            "username": "Aldo",
+            "password": "123456",
+            "email": "aldi@mail.com",
+            "role": "user",
+            "id": 4,
+            "cart": []
         }
     ]
 }
