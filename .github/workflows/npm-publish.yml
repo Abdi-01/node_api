@@ -1,0 +1,28 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploy Using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd node_api
+            git checkout -b develop
+            git pull origin develop
+            git status
+            npm install
+            pm2 start index.js --name node-api
